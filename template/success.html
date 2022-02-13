@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <link href="../static/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="../static/check.png">
+</head>
+<body>
+    <div class="container">
+        <p style="color: #B5DEFF;">Thank you for uploading!<br><br><span style="font-size: 170%; color: #CAB8FF">Now you can use the data by going to {{ request.remote_addr }}/get_data?name=<br> and then put your filename cAsE sEnSiTiVe including file extension<br />For example, {{ request.remote_addr }}/get_data?name=hello.gif</span>
+    </div>
+</body>
+</html>

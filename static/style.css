@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Quicksand:wght@700&family=Jua&family=Patrick+Hand&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    user-select: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container h1 {
+    font-family: 'Jua', sans-serif;
+    color: #fecd1a;
+    font-size: 230%;
+    margin-top: 80px;
+}
+
+.container h2 {
+    font-family: 'Quicksand', cursive;
+    color: #28b5b5;
+}
+
+.container h3 {
+    font-family: 'Quicksand', cursive;
+    color: #fd3a69;
+}
+
+.container form {
+    margin: 30px;
+}
+
+.container button {
+    font-family: 'Balsamiq Sans', cursive;
+    width: 25%;
+    height: 85px;
+    margin: 1%;
+    text-align: center;
+    font-size: 150%;
+    background-color: #17B978;
+    border-radius: 5px;
+    border: none;
+    color: #f1f3f8;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+}
+
+.container button:hover {
+    background-color: #A7FF83;
+    color: #323232;
+}
+
+.container p {
+    margin: 400px 100px;
+    transition: all 0.4s ease-in-out;
+    color: #29bb89;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 175%;
+}
