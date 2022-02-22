@@ -6,57 +6,59 @@
     <link href="../static/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="../static/favicon.png">
 </head>
-<body>
-<div class="container">
-    <h1>Cload</h1>
-    <h3>Upload your files, instant access, no complicated links</h3>
-    <form method="POST" enctype="multipart/form-data" action="/upload">
-        <input type="file" id="fileElem" multiple="" style="display:none" name="file[]">
-        <button id="fileSelect">Select files</button>
-        <br>
-        <div id="image-holder"></div>
-        <button style="width: 22.5%;" type="submit" value="add">Upload</button>
-    </form>
-</div>
+    <body>
+        <div class="container">
+            <h1>Cload</h1>
+            <h3>Upload your files, instant access, no complicated links</h3>
+            <form method="POST" enctype="multipart/form-data" action="/upload">
+                <input type="file" id="fileElem" multiple="" style="display:none" name="file[]">
+                <button id="fileSelect">Select files</button>
+                <br/>
+                <div id="image-holder"></div>
+                <button style="width: 20%;" type="submit" value="add">Upload</button>
+                <br/>
+            </form>
+        </div>
 
-<script>
-const fileSelect = document.getElementById("fileSelect"),
-    fileElem = document.getElementById("fileElem"),
-    fileList = document.getElementById("fileList");
+        <script>
+        const fileSelect = document.getElementById("fileSelect"),
+            fileElem = document.getElementById("fileElem"),
+            fileList = document.getElementById("fileList");
 
-fileSelect.addEventListener("click", function (e) {
-  if (fileElem) {
-    fileElem.click();
-  }
-  e.preventDefault(); // prevent navigation to "#"
-}, false);
+        fileSelect.addEventListener("click", function (e) {
+          if (fileElem) {
+            fileElem.click();
+          }
+          e.preventDefault(); // prevent navigation to "#"
+        }, false);
 
-fileElem.addEventListener("change", handleFiles, false);
+        fileElem.addEventListener("change", handleFiles, false);
 
-function handleFiles() {
-  if (!this.files.length) {
-    fileList.innerHTML = "<p>No files selected!</p>";
-  } else {
-    fileList.innerHTML = "";
-    const list = document.createElement("ul");
-    fileList.appendChild(list);
-    for (let i = 0; i < this.files.length; i++) {
-      const li = document.createElement("li");
-      list.appendChild(li);
+        function handleFiles() {
+          if (!this.files.length) {
+            fileList.innerHTML = "<p>No files selected!</p>";
+          } else {
+            fileList.innerHTML = "";
+            const list = document.createElement("ul");
+            fileList.appendChild(list);
+            for (let i = 0; i < this.files.length; i++) {
+              const li = document.createElement("li");
+              list.appendChild(li);
 
-      const img = document.createElement("img");
-      img.src = URL.createObjectURL(this.files[i]);
-      img.height = 60;
-      img.onload = function() {
-        URL.revokeObjectURL(this.src);
-      }
-      li.appendChild(img);
-      const info = document.createElement("span");
-      info.innerHTML = this.files[i].name;
-      li.appendChild(info);
-    }
-  }
-}
-</script>
-</body>
+              const img = document.createElement("img");
+              img.src = URL.createObjectURL(this.files[i]);
+              img.height = 60;
+              img.onload = function() {
+                URL.revokeObjectURL(this.src);
+              }
+              li.appendChild(img);
+              const info = document.createElement("span");
+              info.innerHTML = this.files[i].name;
+              li.appendChild(info);
+            }
+          }
+        }
+
+        </script>
+    </body>
 </html>

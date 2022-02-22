@@ -55,7 +55,11 @@ html, body {
 
 .container button:hover {
     background-color: #A7FF83;
-    color: #323232;
+    color: #2D4059;
+    -webkit-transition: color 1s ease-out;
+    -moz-transition: color 1s ease-out;
+    -o-transition: color 1s ease-out;
+    transition: color 1s ease-out;
 }
 
 .container p {
